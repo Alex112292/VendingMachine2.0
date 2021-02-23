@@ -13,5 +13,10 @@ public class BetterVendingMachine {
         int balanceInt = (int)Math.round(balance);
 
         System.out.println("Your current balance is: $" + balanceInt + ".");
+        System.out.println("Please select a snack by entering it's code");
+
+        Scanner input2 = new Scanner(System.in);
+        String choice = input2.nextLine();
+        System.out.println("You have selected " + choice + ".");
     }
 }
