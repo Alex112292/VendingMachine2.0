@@ -3,6 +3,10 @@ import java.util.Scanner;
 public class BetterVendingMachine {
     public static void main(String[] args)
     {
+        Double A1, A2, B1, B2, C1, C2;
+        A1 = C1 = B2 = 1.0;
+        B1 = C2 = 2.0;
+        A2 = 3.0;
         System.out.println("Welcome to the Non-Trademarked Vending Machine! It's the vending machine that sells the opposites of the popular brands!");
         System.out.println("This machine only accepts $1 bills and will return exact change from your selection.");
         System.out.println("[A1] Macadamia Sad - $1.00, [B1] Stand's Chips - $2.00, [C1] Road Mix - $1.00, [A2] Andromeda - $3.00, [B2] Venus Bar - $1.00. [C2]  - $2.00");
@@ -22,7 +26,39 @@ public class BetterVendingMachine {
         String confirmation = input2.nextLine();
         if(confirmation.equalsIgnoreCase("yes"))
         {
+            Double amountLeft = 0.0;
 
+            // Switch
+            switch (choice.toLowerCase()) {
+                case "a1": // if its A1 then
+                    System.out.println("Getting A1");
+                    amountLeft = balance - A1;
+                    break;
+                case "a2":
+                    System.out.println("Getting A2");
+                    amountLeft = balance - A2;
+                    break;
+                case "b1":
+                    System.out.println("Getting B1");
+                    amountLeft = balance - B1;
+                    break;
+                case "b2":
+                    System.out.println("Getting B2");
+                    amountLeft = balance - B2;
+                    break;
+                case "c1":
+                    System.out.println("Getting C1");
+                    amountLeft = balance - C1;
+                    break;
+                case "c2":
+                    System.out.println("Getting C2");
+                    amountLeft = balance - C2;
+                    break;
+                default: // if none match then print this
+                    System.out.println("That option does not exist!");
+                    break;
+            }
+            System.out.println("Amount remaining: $" + amountLeft);
         }
         else if(confirmation.equalsIgnoreCase("no"))
         {
@@ -32,5 +68,6 @@ public class BetterVendingMachine {
         {
             System.out.println("That is not a valid option. Ending Transaction");
         }
+
     }
 }
