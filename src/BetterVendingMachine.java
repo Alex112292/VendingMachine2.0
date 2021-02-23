@@ -22,7 +22,39 @@ public class BetterVendingMachine {
         String confirmation = input2.nextLine();
         if(confirmation.equalsIgnoreCase("yes"))
         {
+            Double amountLeft = 0.0;
 
+            // Switch
+            switch (choice.toLowerCase()) {
+                case "a1": // if its A1 then
+                    System.out.println("Getting A1");
+                    amountLeft = balance - 1;
+                    break;
+                case "a2":
+                    System.out.println("Getting A2");
+                    amountLeft = balance - 3;
+                    break;
+                case "b1":
+                    System.out.println("Getting B1");
+                    amountLeft = balance - 2;
+                    break;
+                case "b2":
+                    System.out.println("Getting B2");
+                    amountLeft = balance - 1;
+                    break;
+                case "c1":
+                    System.out.println("Getting C1");
+                    amountLeft = balance - 1;
+                    break;
+                case "c2":
+                    System.out.println("Getting C2");
+                    amountLeft = balance - 2;
+                    break;
+                default: // if none match then print this
+                    System.out.println("That option does not exist!");
+                    break;
+            }
+            System.out.println(amountLeft);
         }
         else if(confirmation.equalsIgnoreCase("no"))
         {
@@ -32,5 +64,6 @@ public class BetterVendingMachine {
         {
             System.out.println("That is not a valid option. Ending Transaction");
         }
+
     }
 }
