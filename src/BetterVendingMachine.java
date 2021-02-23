@@ -24,13 +24,11 @@ public class BetterVendingMachine {
         System.out.println("You have selected " + choice + ".");
         System.out.println("Please confirm your selection by typing yes or no.");
         String confirmation = input2.nextLine();
+        Double amountLeft = 0.0;
         if(confirmation.equalsIgnoreCase("yes"))
         {
-            Double amountLeft = 0.0;
-
-            // Switch
             switch (choice.toLowerCase()) {
-                case "a1": // if its A1 then
+                case "a1":
                     System.out.println("Getting A1");
                     amountLeft = balance - A1;
                     break;
@@ -54,19 +52,22 @@ public class BetterVendingMachine {
                     System.out.println("Getting C2");
                     amountLeft = balance - C2;
                     break;
-                default: // if none match then print this
+                default:
                     System.out.println("That option does not exist!");
                     break;
             }
-            System.out.println("Amount remaining: $" + amountLeft);
+            System.out.format("Amount remaining: $%.2f", amountLeft);
+            System.out.format("\nAmount refunded: $%.2f", amountLeft);
         }
         else if(confirmation.equalsIgnoreCase("no"))
         {
             System.out.println("Sorry that is not your choice refunding all money.");
+            System.out.format("\nAmount Refunded: $%.2f", balance);
         }
         else
         {
             System.out.println("That is not a valid option. Ending Transaction");
+            System.out.format("\nAmount Refunded: $%.2f", balance);
         }
 
     }
