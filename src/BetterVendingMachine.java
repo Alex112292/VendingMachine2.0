@@ -18,5 +18,19 @@ public class BetterVendingMachine {
         Scanner input2 = new Scanner(System.in);
         String choice = input2.nextLine();
         System.out.println("You have selected " + choice + ".");
+        System.out.println("Please confirm your selection by typing yes or no.");
+        String confirmation = input2.nextLine();
+        if(confirmation.equalsIgnoreCase("yes"))
+        {
+
+        }
+        else if(confirmation.equalsIgnoreCase("no"))
+        {
+            System.out.println("Sorry that is not your choice refunding all money.");
+        }
+        else
+        {
+            System.out.println("That is not a valid option. Ending Transaction");
+        }
     }
 }
